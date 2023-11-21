@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { UsePostContext } from '../contexts/PostContext';
 import Post from './Post';
 import { UseUserContext } from '../contexts/UserContext';
 
 const Home = () => {
   const { token } = UseUserContext();
   const [posts, setPosts] = useState([]);
-  console.log(token);
 
   const getPosts = async () => {
     try {

@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import notify from '../helpers/notification'; // Update the path accordingly
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { UseUserContext } from '../contexts/UserContext';
 
 
 const CreateReel = () => {
+  const {token} = UseUserContext()
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [video, setVideo] = useState(null);
@@ -24,6 +26,9 @@ const CreateReel = () => {
     try {
       const response = await fetch(`https://shreshthbansal.pythonanywhere.com/api/reel/`, {
         method: 'POST',
+        headers:{
+          'Authorization': `Token ${token}`
+        },
         body: formData,
       });
   

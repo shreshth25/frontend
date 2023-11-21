@@ -38,7 +38,7 @@ const Login = () => {
         setEmail("")
         setPassword("")
         setToken(data['data']['token'])
-        localStorage.setItem('token', data['data']['token'])
+        localStorage.setItem('minstagram_token', data['data']['token'])
         notify(data['data']['message'])
         navigate("/")
       } else {

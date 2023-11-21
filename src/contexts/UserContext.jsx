@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 const UserContext = React.createContext()
 
 const UserContextProvider = ({children})=>{
-    const stored_token = localStorage.getItem('token')
+    const stored_token = localStorage.getItem('minstagram_token')
     const [token, setToken] = useState(stored_token)
     
     const contextValue = {

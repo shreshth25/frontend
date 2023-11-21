@@ -28,6 +28,9 @@ const CreatePost = () => {
     try {
       const response = await fetch(`https://shreshthbansal.pythonanywhere.com/api/post/`, {
         method: 'POST',
+        headers:{
+          'Authorization': `Token ${token}`
+        },
         body: formData,
       });
       console.log(response);
